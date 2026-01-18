@@ -1,73 +1,87 @@
-# React + TypeScript + Vite
+# React Todo App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+───────────────────────────────────────────────────
+(日本語)
 
-Currently, two official plugins are available:
+シンプルなTodo管理アプリです。
+React + TypeScript の理解を深めるために作成しました。
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*本プロジェクトはJavaScriptで実装後、TypeScriptに移行しています。
+型定義を明確にすることで、バグの予防と保守性の向上を目的としました。
 
-## React Compiler
+## リポジトリ
+https://github.com/jomaru777/todolist.git
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 機能
+- Todoの追加/削除/完了切り替え
+- localStorageによる永続化
+- コンポーネント分割による責務分離
 
-## Expanding the ESLint configuration
+## 使用技術
+- React
+- TypeScript
+- Vite
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## フォルダー構成
+src/
+├─ components/
+│  ├─ todo/
+│  └─ ui/
+├─ hooks/
+├─ types/
 
-```js
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
+## 設計・工夫した点
+- 状態管理とロジックをカスタムフック（useTodos）に集約
+- 共通の型定義を types/ に切り出し
+- UIコンポーネントは表示に専念させる設計
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 学んだこと
+- Reactにおける state/props の流れ
+- TypeScriptによる型安全な設計
+- 小さなコンポーネントに分割する考え方
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+## 次のステップ
+このアプリをNext.js（App Router）で再実装したリポジトリも作成しています。
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from "eslint-plugin-react-x";
-import reactDom from "eslint-plugin-react-dom";
+───────────────────────────────────────────────────
+(English)
 
-export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs["recommended-typescript"],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ["./tsconfig.node.json", "./tsconfig.app.json"],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+A simple Todo management application built to deepen my understanding of React and TypeScript.
+
+*This project was initially implemented in JavaScript and later migrated to TypeScript to improve type safety and maintainability.
+
+##　repository
+https://github.com/jomaru777/todolist.git
+
+## Features
+- Add, delete, and toggle todo items
+- Persistent data storage using localStorage
+- Clear separation of concerns through component-based design
+
+## Tech Stack
+- React
+- TypeScript
+- Vite
+
+## Folder Structure
+src/
+├─ components/
+│  ├─ todo/
+│  └─ ui/
+├─ hooks/
+├─ types/
+
+## Architecture　&　Design
+- Todo state and logic are managed in a custom hook (useTodos)
+- Shared data structures are defined in the types/ directory
+- UI components focus purely on presentation
+
+## What I Learned
+- React data flow using state and props
+- The importance of explicit type definitions in TypeScript
+- Designing small and reusable components
+
+## Next Step
+I am also rebuilding this application using Next.js(App Router)in a separate repository.Designing small and reusable components.
+
