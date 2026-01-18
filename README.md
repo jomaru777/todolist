@@ -45,13 +45,15 @@ src/
 
 
 ───────────────────────────────────────────────────
+
+
 (English)
 
 A simple Todo management application built to deepen my understanding of React and TypeScript.
 
 *This project was initially implemented in JavaScript and later migrated to TypeScript to improve type safety and maintainability.
 
-##　repository
+## repository
 https://github.com/jomaru777/todolist.git
 
 ## Features
